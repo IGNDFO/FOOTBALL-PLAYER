@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    namespace 'com.example.footballplayer'
+    namespace 'com.ahmfarisi.footballplayer'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.footballplayer"
-        minSdk 21
+        applicationId "com.ahmfarisi.footballplayer"
+        minSdk 24
         targetSdk 33
         versionCode 1
         versionName "1.0"

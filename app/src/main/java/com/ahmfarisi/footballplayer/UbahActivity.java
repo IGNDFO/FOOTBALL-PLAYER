@@ -1,10 +1,10 @@
-package com.example.footballplayer;
+package com.ahmfarisi.footballplayer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class ubah extends AppCompatActivity {
+public class UbahActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

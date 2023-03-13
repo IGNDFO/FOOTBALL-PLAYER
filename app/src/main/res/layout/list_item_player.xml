@@ -2,35 +2,36 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp"
+    android:layout_margin="6dp"
     android:elevation="32dp">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="6dp">
+        android:padding="6dp"
+        android:orientation="vertical">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="nama"
             android:id="@+id/tv_nama"
-            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Pemain"
+            android:textSize="21sp"
             android:textStyle="bold"/>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="no punggung"
             android:id="@+id/tv_nomor"
-            android:textSize="15dp"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nomor Punggung"
+            android:textSize="21sp" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/tv_klub"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="klub"
-            android:textSize="15dp"
-            android:id="@+id/tv_klub"/>
+            android:text="Klub"
+            android:textSize="21sp" />
 
     </LinearLayout>
 

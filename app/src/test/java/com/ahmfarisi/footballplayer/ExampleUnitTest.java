@@ -1,4 +1,4 @@
-package com.example.footballplayer;
+package com.ahmfarisi.footballplayer;
 
 import org.junit.Test;
 
