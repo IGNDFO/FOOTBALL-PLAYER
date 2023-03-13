@@ -15,8 +15,6 @@ public class AdapterFootballPlayer extends RecyclerView.Adapter<AdapterFootballP
     private Context ctx;
     private ArrayList arrNama, arrNomor, arrKlub;
 
-
-
     public AdapterFootballPlayer(Context ctx, ArrayList arrNama, ArrayList arrNomor, ArrayList arrKlub) {
         this.ctx = ctx;
         this.arrNama = arrNama;

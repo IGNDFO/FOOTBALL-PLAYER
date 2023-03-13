@@ -15,15 +15,18 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    MyDatabaseHelper myDB;
-    private AdapterFootballPlayer adplayer;
-    private ArrayList<String> arrnama,arrnomor,arrklub;
-    private RecyclerView rvplayer;
+    private MyDatabaseHelper myDB;
     private FloatingActionButton fabTambah;
+    private RecyclerView rvPlayer;
+    private AdapterFootballPlayer adPlayer;
+    private ArrayList<String> arrNama, arrNomor, arrKlub;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        rvPlayer = findViewById(R.id.rv_player);
 
         myDB = new MyDatabaseHelper(MainActivity.this);
 
@@ -35,27 +38,38 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        tampilPlayer();
+    }
+
     private void SQliteToArrayList(){
-        Cursor varcursor = myDB.bacaDataPlayer();
-        if(varcursor.getCount()==0){
-            Toast.makeText(this, "TIDAK ADA DATA", Toast.LENGTH_SHORT).show();
+        Cursor varCursor = myDB.bacaDataPlayer();
+        if(varCursor.getCount() == 0){
+            Toast.makeText(this, "Tidak Ada Data", Toast.LENGTH_SHORT).show();
         }
-        else {
-            while (varcursor.moveToNext()){
-                arrnama.add(varcursor.getString(1));
-                arrnomor.add(varcursor.getString(2));
-                arrklub.add(varcursor.getString(3));
+        else{
+            while (varCursor.moveToNext()){
+                arrNama.add(varCursor.getString(1));
+                arrNomor.add(varCursor.getString(2));
+                arrKlub.add(varCursor.getString(3));
             }
         }
     }
-    private void tampilplayer(){
-        arrnama=new ArrayList<>();
-        arrnomor=new ArrayList<>();
-        arrklub=new ArrayList<>();
+
+    private void tampilPlayer(){
+        arrNama = new ArrayList<>();
+        arrNomor = new ArrayList<>();
+        arrKlub = new ArrayList<>();
+
         SQliteToArrayList();
 
-    adplayer= new AdapterFootballPlayer(MainActivity.this,arrnama,arrklub,arrnomor);
-    rvplayer.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-    rvplayer.setAdapter(adplayer);
+        adPlayer = new AdapterFootballPlayer(MainActivity.this, arrNama, arrNomor, arrKlub);
+
+        rvPlayer.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+        rvPlayer.setAdapter(adPlayer);
+
     }
 }
